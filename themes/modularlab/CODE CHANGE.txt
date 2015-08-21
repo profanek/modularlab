@@ -1,0 +1,15 @@
+CODE CHANGE!!!
+
+
+functions.php
+
+<label class="team-lbl" for="oe_team_title"><?php _e('Title:', 'oneengine') ?></label>
+<input type="text" class="input-custom-field" name="oe_team_title" id="oe_team_title" placeholder="" value="<?php echo get_post_meta($post->ID, 'oe_team_title', true) ?>"><br>
+
+if(isset($_POST['oe_team_title']))
+update_post_meta( $post_id, 'oe_team_title', $_POST['oe_team_title'] );
+
+
+et-team-block.php
+
+<h5 class="team-title"><?php echo get_post_meta( $post->ID, 'oe_team_title', true ); ?></h5>
